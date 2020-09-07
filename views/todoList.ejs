@@ -1,20 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
- <meta charset="UTF-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>ToDo App</title>
+  <title>Todo App</title>
+  <link rel="stylesheet" href="/static/stylesheets/todos.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 
 <body>
- <form method="POST">
-  <input name="name" placeholder="Add name of the assignment." /><br />
-  <input name="description" placeholder="Add description." /><br />
-  <input name="creator" placeholder="Creator name." />
-  <input name="duration" placeholder="Duration of the asssignment." />
-  <button type="submit">ADD</button>
- </form>
+  <div class="todo-container">
+    <h2 style="text-align: center; color: darkslateblue;">To-Do List</h2>
+    <div class="item-container">
+      <ul> <% for(var i = 0; i<todos.length; i++) { %>
+        <div class="todo-item">
+          <div class="todo-leftalign">
+            <h2
+              style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+              <%= todos[i].name %></h2>
+            <p class="p-class">Description: <%= todos[i].description %></p>
+            <p class="p-class">Creator: <%= todos[i].creator %></p>
+            <p class="p-class">Duration: <%= todos[i].duration %> Minutes</p>
+            <br />
+          </div>
+        </div>
+        <% } %>
+      </ul>
+    </div>
+  </div>
 </body>
-
-</html>

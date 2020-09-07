@@ -1,0 +1,43 @@
+* {
+ margin: 0;
+ padding: 0;
+}
+
+.todo-container {
+ color: white;
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: white;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.item-container {
+ display: flex;
+ flex-direction: column;
+ margin-left: 0;
+ width: 400px;
+ border-radius: 10px;
+ background-color: #34495e;
+ text-align: center;
+}
+
+.todo-item {
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 8px;
+ margin-bottom: 8px;
+ width: 95%;
+ background-color: #1f618d;
+ border-radius: 10px;
+}
+
+.todo-leftalign {
+ margin-left: 3px;
+ width: fit-content;
+ text-align: left;
+}

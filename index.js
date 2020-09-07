@@ -25,10 +25,16 @@ mongoose
   })
   .catch((err) => console.log("Error connecting to the database."));
 
+//Redirect to add page when reached at this route
+app.get("/", (req, res) => {
+  res.redirect("/add");
+});
+
+//List all the todos added from the mongodb
 app.get("/list", (req, res) => {
   Todo.find({})
     .then((todos) => {
-      res.render("landing", {
+      res.render("todoList", {
         todos,
       });
     })
@@ -37,6 +43,7 @@ app.get("/list", (req, res) => {
     });
 });
 
+//Add a todo to the database
 app.post("/add", (req, res) => {
   const { errors, isValid } = validateTodoInput(req.body);
   if (!isValid) {
@@ -51,15 +58,21 @@ app.post("/add", (req, res) => {
   newTodo
     .save()
     .then((todo) => {
+      req.body.name = "";
+      req.body.description = "";
+      req.body.creator = "";
+      req.body.duration = "";
       res.redirect("/add");
     })
     .catch((err) => res.status(400).json({ error: err }));
 });
 
+//Load the form when a user wants to add a todo
 app.get("/add", (req, res) => {
   res.render("addTodo");
 });
 
+//Listen on a particular port
 app.listen(port, () => {
   console.log(`Server is up and running on port ${port}`);
 });
