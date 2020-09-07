@@ -12,6 +12,7 @@ app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use("/static", express.static("public"));
 
 mongoose
   .connect(mongoURI, {
@@ -49,8 +50,14 @@ app.post("/add", (req, res) => {
   });
   newTodo
     .save()
-    .then((todo) => res.json(todo))
+    .then((todo) => {
+      res.redirect("/add");
+    })
     .catch((err) => res.status(400).json({ error: err }));
+});
+
+app.get("/add", (req, res) => {
+  res.render("addTodo");
 });
 
 app.listen(port, () => {

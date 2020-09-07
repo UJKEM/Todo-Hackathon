@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Todo App</title>
+  <link rel="stylesheet" href="/static/stylesheets/style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Candal|Chewy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="todo-container">
+    <h2>To-Do List</h2>
+    <div class="todo">
+      <form action="/add" method="POST" class="todo-header">
+        <h1>Name</h1>
+        <input type="text" name="name">
+        <h1>Description</h1>
+        <input type="text" name="description">
+        <h1>Creator</h1>
+        <input type="text" name="creator">
+        <h1>Duration</h1>
+        <input type="text" name="duration">
+        <div class="balign">
+          <button type="submit"><span class="fas fa-plus"></span></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
