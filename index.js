@@ -72,16 +72,6 @@ app.get("/add", (req, res) => {
   res.render("addTodo");
 });
 
-app.delete("/del", (req, res) => {
-  Todo.deleteMany({})
-    .then(() => {
-      res.json("Successful.");
-    })
-    .catch((err) => {
-      res.json("Error");
-    });
-});
-
 //Listen on a particular port
 app.listen(port, () => {
   console.log(`Server is up and running on port ${port}`);
