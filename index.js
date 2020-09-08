@@ -53,7 +53,7 @@ app.post("/add", (req, res) => {
     name: req.body.name,
     description: req.body.description,
     creator: req.body.creator,
-    duration: req.body.duration + Date.now(),
+    duration: new Date(Date.now() + req.body.duration * 60 * 1000),
   });
   newTodo
     .save()
