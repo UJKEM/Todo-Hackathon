@@ -4,7 +4,6 @@ const app = express();
 const Todo = require("./model/Todo");
 const validateTodoInput = require("./validation");
 const mongoose = require("mongoose");
-const { mongoURI } = require("./config/keys");
 require("dotenv").config({ path: __dirname + "/.env" });
 
 const port = process.env.PORT || 3000;
