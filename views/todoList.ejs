@@ -20,7 +20,7 @@
               <%= todos[i].name %></h2>
             <p class="p-class">Description: <%= todos[i].description %></p>
             <p class="p-class">Creator: <%= todos[i].creator %></p>
-            <p class="p-class">Duration: <%= (todos[i].duration)%> seconds</p>
+            <p class="p-class">Expires At: <%= (todos[i].duration.getTime)%></p>
             <br />
           </div>
         </div>
