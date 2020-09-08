@@ -30,6 +30,11 @@ app.get("/", (req, res) => {
   res.redirect("/add");
 });
 
+//Redirect when landed on homepage
+app.get("/", (req, res) => {
+  res.redirect("/add");
+});
+
 //List all the todos added from the mongodb
 app.get("/list", (req, res) => {
   Todo.find({})
