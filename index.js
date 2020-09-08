@@ -53,7 +53,7 @@ app.post("/add", (req, res) => {
     name: req.body.name,
     description: req.body.description,
     creator: req.body.creator,
-    duration: req.body.duration,
+    duration: req.body.duration + Date.now(),
   });
   newTodo
     .save()
@@ -70,6 +70,16 @@ app.post("/add", (req, res) => {
 //Load the form when a user wants to add a todo
 app.get("/add", (req, res) => {
   res.render("addTodo");
+});
+
+app.delete("/del", (req, res) => {
+  Todo.deleteMany({})
+    .then(() => {
+      res.json("Successful.");
+    })
+    .catch((err) => {
+      res.json("Error");
+    });
 });
 
 //Listen on a particular port
