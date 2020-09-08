@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use("/static", express.static("public"));
 
 mongoose
-  .connect(mongoURI, {
+  .connect(process.env.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
