@@ -18,12 +18,12 @@ const TodoSchema = new Schema({
     required: true,
   },
   duration: {
-    type: Number,
+    type: Date,
     required: true,
   },
   createAt: {
     type: Date,
-    default: Date.now,
+    default: Date.now(),
   },
 });
 
